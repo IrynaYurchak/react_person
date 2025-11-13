@@ -1,8 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
 
 export const Person = ({ person }) => {
   const { name, age, sex, isMarried, partnerName } = person;
+
+  const partnerTitle = sex === 'm' ? 'wife' : 'husband';
 
   return (
     <div className="Person">
@@ -12,7 +13,7 @@ export const Person = ({ person }) => {
 
       <p className="Person__partner">
         {isMarried
-          ? `My ${sex === 'm' ? 'wife' : 'husband'} is ${partnerName}`
+          ? `My ${partnerTitle} is ${partnerName}`
           : 'I am not married'}
       </p>
     </div>
